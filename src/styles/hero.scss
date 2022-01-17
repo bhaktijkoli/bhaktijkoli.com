@@ -1,0 +1,51 @@
+section {
+  .title {
+    margin-bottom: 50px;
+  }
+}
+section#hero {
+  .overlay {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
+  .overlay svg {
+    width: inherit;
+    height: inherit;
+  }
+  .overlay svg .rect1 {
+    animation: reactange-1 5s linear 1s infinite alternate;
+  }
+  .overlay svg .rect2 {
+    animation: reactange-2 5s linear 200ms infinite alternate;
+  }
+  .container {
+    margin-top: 200px;
+    color: #FFFFFF;
+  }
+  .coding-image {
+    margin-top: 50px;
+    width: 560px;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes reactange-1 {
+  from {
+    transform: translate(-92px, 770px);
+  }
+  to {
+    transform: translate(92px, 770px);
+  }
+}
+@keyframes reactange-2 {
+  from {
+    transform: translate(1133px, 338px);
+  }
+  to {
+    transform: translate(1233px, 338px);
+  }
+}
