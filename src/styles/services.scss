@@ -1,0 +1,30 @@
+#services {
+  .service {
+    margin-top: 30px;
+  }
+  .service svg {
+    width: inherit;
+    height: inherit;
+  }
+  .service svg .blob {
+    animation: blob 3s linear 1s infinite alternate;
+  }
+  .service-title {
+    margin-top: 50px;
+    font-size: 1.8rem;
+    color: #5a40ca;
+  }
+  .service-description {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+@keyframes blob {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
