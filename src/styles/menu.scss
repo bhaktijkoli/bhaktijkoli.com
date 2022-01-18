@@ -1,0 +1,92 @@
+#menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 1040;
+    cursor: pointer;
+    div {
+        height: 2px;
+        background: #FFFFFF;
+        margin: 5px 0px;
+        animation-name: menu-enter;
+        animation-duration: 300ms;
+        animation-fill-mode: both;
+        opacity: 0;
+    }
+    .top {
+        width: 32px;
+        animation-delay: 300ms;
+    }
+    .middle {
+        width: 25px;
+        animation-delay: 400ms;
+    }
+    .bottom {
+        width: 30px;
+        animation-delay: 500ms;
+    }
+}
+
+#menu-overlay {
+    display: none;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1040;
+    background-color: #0000004f;
+    transition: all 300ms;
+}
+
+#menu-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+#menu {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1040;
+    background-color: white;
+    width: 0px;
+    height: 100vh;
+    transition: all 300ms;
+    .menu-container {
+        position: relative;
+        height: 100vh;
+    }
+    .menu-items {
+        height: 100vh;
+        padding: 0px;
+        margin: 10vh 0px;
+        text-align: center;
+        list-style: none;
+    }
+    .menu-item {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: all 300ms;
+    }
+    .menu-item:hover {
+        color: #5a40ca;
+    }
+}
+
+#menu.open {
+    width: 30vw;
+}
+
+@keyframes menu-enter {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
