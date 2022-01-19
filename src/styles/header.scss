@@ -1,0 +1,48 @@
+#header {
+  .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+  }
+  svg .rect1 {
+    animation: reactange-1 2s linear 1s infinite alternate;
+  }
+  svg .rect2 {
+    animation: reactange-2 2s linear 1s infinite alternate;
+  }
+  svg .rect3 {
+    animation: reactange-3 2s linear 1s infinite alternate;
+  }
+  .container {
+    margin-top: 50px;
+  }
+  .title {
+    color: #FFF;
+  }
+}
+
+@keyframes reactange-1 {
+  from {
+    transform: translate(-9px, -5px) rotate(-7deg);
+  }
+  to {
+    transform: translate(10px, -5px) rotate(-7deg);
+  }
+}
+@keyframes reactange-2 {
+  from {
+    transform: translate(4px, 50px) rotate( -7deg);
+  }
+  to {
+    transform: translate(25px, 50px) rotate( -7deg);
+  }
+}
+@keyframes reactange-3 {
+  from {
+    transform: translate(4px, 105px) rotate( -7deg);
+  }
+  to {
+    transform: translate(25px, 105px) rotate( -7deg);
+  }
+}
