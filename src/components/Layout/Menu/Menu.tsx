@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Fade from "react-reveal/Fade";
+import { useRouter } from "next/router";
 
 const ITEMS = [
   {
@@ -8,12 +9,13 @@ const ITEMS = [
     link: "/",
   },
   {
-    label: "Work",
-    link: "/#work",
+    label: "Projects",
+    link: "/projects",
   },
 ];
 
 const Menu: React.FC = () => {
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
@@ -32,7 +34,11 @@ const Menu: React.FC = () => {
           <ul className="menu-items">
             {ITEMS.map((item, key) => {
               return (
-                <li className="menu-item" key={key}>
+                <li
+                  className="menu-item"
+                  onClick={() => router.push(item.link)}
+                  key={key}
+                >
                   <Fade
                     right
                     duration={500}
