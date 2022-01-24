@@ -4,6 +4,7 @@ import Fade from "react-reveal/Fade";
 import useClient from "hooks/useClient";
 import { Project } from "types";
 import ProjectDialog from "./ProjectDialog";
+import { motion, AnimatePresence } from "framer-motion";
 
 const FILTERS = [
   {
@@ -71,15 +72,16 @@ const ProjectsGrid: React.FC = () => {
               return (
                 <div className="col-sm-4" key={key}>
                   <Fade left distance="10%" duration={500} delay={50 * key}>
-                    <div
+                    <motion.div
                       className="project"
                       onClick={() => setSelectedProject(project)}
+                      layoutId={project.fields.name}
                     >
                       <img src={`${project.fields.image?.fields.file.url}`} />
                       <div className="backdrop">
                         <h3 className="project-title">{project.fields.name}</h3>
                       </div>
-                    </div>
+                    </motion.div>
                   </Fade>
                 </div>
               );
