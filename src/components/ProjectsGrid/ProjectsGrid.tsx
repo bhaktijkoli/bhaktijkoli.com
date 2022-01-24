@@ -3,6 +3,7 @@ import * as React from "react";
 import Fade from "react-reveal/Fade";
 import useClient from "hooks/useClient";
 import { Project } from "types";
+import ProjectDialog from "./ProjectDialog";
 
 const FILTERS = [
   {
@@ -30,6 +31,9 @@ const FILTERS = [
 const ProjectsGrid: React.FC = () => {
   const [projects, setProjects] = React.useState<Project[]>([]);
   const [selectedFilter, setSelectedFilter] = React.useState("all");
+  const [selectedProject, setSelectedProject] = React.useState<Project | null>(
+    null
+  );
   const client = useClient();
   React.useEffect(() => {
     client.getEntries({ content_type: "projects" }).then((res) => {
@@ -67,8 +71,11 @@ const ProjectsGrid: React.FC = () => {
               return (
                 <div className="col-sm-4" key={key}>
                   <Fade left distance="10%" duration={500} delay={50 * key}>
-                    <div className="project">
-                      <img src={`${project.fields.image.fields.file.url}`} />
+                    <div
+                      className="project"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      <img src={`${project.fields.image?.fields.file.url}`} />
                       <div className="backdrop">
                         <h3 className="project-title">{project.fields.name}</h3>
                       </div>
@@ -79,6 +86,12 @@ const ProjectsGrid: React.FC = () => {
             })}
         </div>
       </div>
+      {selectedProject && (
+        <ProjectDialog
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 };

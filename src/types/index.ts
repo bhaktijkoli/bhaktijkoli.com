@@ -4,8 +4,9 @@ export interface Project {
     slug: string;
     categories: string[];
     description: string;
-    github: string;
-    image: {
+    github?: string;
+    link?: string;
+    image?: {
       fields: {
         file: {
           url: string;
