@@ -12,6 +12,10 @@ const ITEMS = [
     label: "Projects",
     link: "/projects",
   },
+  {
+    label: "Schedule",
+    link: "/schedule",
+  },
 ];
 
 const Menu: React.FC = () => {
