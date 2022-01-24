@@ -15,10 +15,10 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   return (
     <AnimatePresence>
       <div className="project-dialog-container">
-        <motion.div className="project-dialog" layoutId={project.fields.name}>
+        <motion.div className="project-dialog" layoutId={project.name}>
           <div className="project-dialog-heading">
             <div className="project-dialog-title">
-              <h3>{project.fields.name}</h3>
+              <h3>{project.name}</h3>
             </div>
             <button className="close-btn" onClick={onClose}>
               <FiMinimize2 />
@@ -27,25 +27,22 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
           <div className="project-dialog-content">
             <div className="row">
               <div className="col-sm-6">
-                <img
-                  className="project-dialog-image"
-                  src={project.fields.image?.fields.file.url}
-                />
+                <img className="project-dialog-image" src={project.image} />
               </div>
               <div className="col-sm-6">
-                <p>{project.fields.description}</p>
-                {project.fields.link && (
+                <p>{project.description}</p>
+                {project.link && (
                   <button
                     className="visit-btn"
-                    onClick={() => window.open(project.fields.link)}
+                    onClick={() => window.open(project.link)}
                   >
                     Visit <FiExternalLink />
                   </button>
                 )}
-                {project.fields.github && (
+                {project.github && (
                   <button
                     className="github-btn"
-                    onClick={() => window.open(project.fields.link)}
+                    onClick={() => window.open(project.link)}
                   >
                     Github <FiGithub />
                   </button>
