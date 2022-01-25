@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 import Menu from "../Menu/Menu";
 
@@ -8,6 +9,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ title, children }: LayoutProps) => {
+  React.useEffect(() => {
+    (window as any).$crisp = [];
+    (window as any).CRISP_WEBSITE_ID = "a015e737-38af-4ba7-8bbb-196c32d291ef";
+  }, []);
   return (
     <React.Fragment>
       <Head>
@@ -39,6 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ title, children }: LayoutProps) => {
       </Head>
       <Menu />
       {children}
+      <Script src="https://client.crisp.chat/l.js" />
     </React.Fragment>
   );
 };
