@@ -28,6 +28,11 @@ const Hero: React.FC = () => {
                   industry.
                 </p>
               </Fade>
+              <button className="btn-chat">
+                Chat Now<i></i>
+              </button>
+              <p className="or">Or</p>
+              <button className="btn-scehudle">Schedule Apointment</button>
             </div>
             <div className="col-sm-6">
               <img src="/img/coding.svg" className="coding-image" />
