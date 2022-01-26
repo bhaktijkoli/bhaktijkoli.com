@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
@@ -17,8 +18,19 @@ const Hero: React.FC = () => {
           transform="translate(21 28)"
           fill="#5a40ca"
         />
-        <rect
-          className="rect1"
+        <motion.rect
+          initial={{
+            y: 770,
+          }}
+          animate={{
+            x: [-92, 92],
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            type: "tween",
+            duration: 5,
+          }}
           width="848"
           height="291"
           rx="100"
@@ -26,8 +38,19 @@ const Hero: React.FC = () => {
           fill="#fff"
           opacity="0.046"
         />
-        <rect
-          className="rect2"
+        <motion.rect
+          initial={{
+            y: 300,
+          }}
+          animate={{
+            x: [1133, 1233],
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            type: "tween",
+            duration: 5,
+          }}
           width="869"
           height="426"
           rx="100"

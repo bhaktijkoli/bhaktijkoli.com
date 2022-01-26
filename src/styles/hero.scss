@@ -6,14 +6,9 @@ section#hero {
     height: 100vh;
   }
   .overlay svg {
+    position: relative;
     width: inherit;
     height: inherit;
-  }
-  .overlay svg .rect1 {
-    animation: reactange-1 5s linear 1s infinite alternate;
-  }
-  .overlay svg .rect2 {
-    animation: reactange-2 5s linear 200ms infinite alternate;
   }
   .container {
     margin-top: 200px;
@@ -89,23 +84,6 @@ section#hero {
   }
   .btn-scehudle:hover {
     color: #FFF;
-  }
-}
-
-@keyframes reactange-1 {
-  from {
-    transform: translate(-92px, 770px);
-  }
-  to {
-    transform: translate(92px, 770px);
-  }
-}
-@keyframes reactange-2 {
-  from {
-    transform: translate(1133px, 338px);
-  }
-  to {
-    transform: translate(1233px, 338px);
   }
 }
 
