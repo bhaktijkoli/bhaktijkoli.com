@@ -49,7 +49,7 @@ const ProjectsGrid: React.FC = () => {
             description: entity.fields.description,
             link: entity.fields.link,
             github: entity.fields.github,
-            image: entity.fields.image.fields.file.url,
+            image: entity.fields.image?.fields.file.url,
           };
         });
         setProjects(projects);

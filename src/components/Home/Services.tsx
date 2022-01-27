@@ -10,28 +10,28 @@ const ITEMS = [
     title: "Web/Desktop Application Development",
     img: <Web />,
     description:
-      "I am very firm when it comes to Web Development, I have built single page, e-commerce, content management and analytical web applications. I have also developed desktop cross-platform applications as well as Windows desktop application.",
+      "I am very firm when it comes to Web Development, I have built single pages, e-commerce, content management and analytical web applications. I have also developed desktop cross-platform applications as well as Windows desktop applications.",
     reverse: false,
   },
   {
     title: "Mobile Application Development",
     img: <Mobile />,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "I have built and published several mobile apps mainly including e-commerce, management and utility applications using cross-platform mobile application development frameworks like react-native and ionic.",
     reverse: true,
   },
   {
     title: "Internet Of Things",
     img: <InternetOfThings />,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Having a good understanding of the interaction between physical hardware and software programming, I have built and provided various data-driven IoT solutions. Have worked on communication protocols including I2C, SPI, 1-wire, UART, MODBUS, DALI and various boards including Arduino, esp and Raspberry PI.",
     reverse: false,
   },
   {
     title: "Blockchain",
     img: <BlockChain />,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Have implemented blockchain using Ethereum, Solidity and Truffle and developed web application using web3 for javascript.",
     reverse: true,
   },
 ];
@@ -44,8 +44,8 @@ const Services: React.FC = () => {
           <div className="col-sm-12">
             <h1 className="title">What I Do</h1>
             <p className="subtitle">
-              I have worked with various technolgoies and frameworks to build
-              innovatie and ideal projects.
+              I have worked with various technologies and frameworks to build
+              innovative and ideal projects.
             </p>
           </div>
           {ITEMS.map((item, key) => {

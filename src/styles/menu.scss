@@ -83,6 +83,16 @@
   width: 30vw;
 }
 
+#logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  svg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 @keyframes menu-enter {
   from {
     opacity: 0;

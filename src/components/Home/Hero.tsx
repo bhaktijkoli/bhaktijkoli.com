@@ -1,9 +1,11 @@
 import React from "react";
 import HeroBackground from "../Backgrounds/Hero";
 import Fade from "react-reveal/Fade";
+import { useRouter } from "next/router";
 
 const Hero: React.FC = () => {
   const [animate, setAnimate] = React.useState(false);
+  const router = useRouter();
   React.useEffect(() => {
     setAnimate(true);
   }, []);
@@ -28,13 +30,14 @@ const Hero: React.FC = () => {
                   industry.
                 </p>
               </Fade>
-              <button className="btn-chat">
-                Chat Now<i></i>
+              <button
+                className="btn-chat"
+                onClick={() => router.push("/schedule")}
+              >
+                Connect<i></i>
               </button>
-              <p className="or">Or</p>
-              <button className="btn-scehudle">Schedule Apointment</button>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-6" style={{ marginTop: 20 }}>
               <img src="/img/coding.svg" className="coding-image" />
             </div>
           </div>
