@@ -61,10 +61,20 @@
     position: relative;
     height: 100vh;
   }
+  .menu-action {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px
+  }
+  .menu-action .btn-close {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 3rem;
+  }
   .menu-items {
     height: 100vh;
     padding: 0px;
-    margin: 10vh 0px;
     text-align: center;
     list-style: none;
   }
@@ -101,5 +111,11 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #menu.open {
+    width: 100vw;
   }
 }

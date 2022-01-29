@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Fade from "react-reveal/Fade";
 import { useRouter } from "next/router";
+import { IoCloseOutline } from "react-icons/io5";
 
 const ITEMS = [
   {
@@ -35,6 +36,15 @@ const Menu: React.FC = () => {
       />
       <div id="menu" className={clsx({ open })}>
         <div className="menu-container">
+          <div className="menu-action">
+            {open && (
+              <Fade right duration={500} distance="10%" delay={100}>
+                <button className="btn-close" onClick={() => setOpen(false)}>
+                  <IoCloseOutline />
+                </button>
+              </Fade>
+            )}
+          </div>
           <ul className="menu-items">
             {ITEMS.map((item, key) => {
               return (
