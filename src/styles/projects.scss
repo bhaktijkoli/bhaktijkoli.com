@@ -15,6 +15,7 @@
     display: inline-block;
     font-size: 1rem;
     margin-left: 20px;
+    margin-bottom: 20px;
     border-radius: 4px;
     cursor: pointer;
     text-transform: uppercase;
@@ -24,114 +25,131 @@
     background-color: #5a40ca;
     color: #f5f5f5;
   }
-  .projects-grid {
-    margin-top: 50px;
+  // .projects-grid {
+    // margin-top: 50px;
+    // }
+    .projects-grid .project {
+      position: relative;
+      margin: 15px;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .projects-grid .project img {
+      width: 100%;
+      transition: all 300ms;
+    }
+    .projects-grid .project .backdrop {
+      cursor: pointer;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: #0000001a;
+      transition: all 300ms;
+      z-index: 1;
+    }
+    .projects-grid .project .backdrop .project-title {
+      background: #0000007e;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      font-size: 1rem;
+      color: #fff;
+      padding: 5px;
+      transition: all 300ms;
+      opacity: 0;
+    }
+    .projects-grid .project .backdrop:hover .project-title {
+      display: block;
+      opacity: 1;
+    }
   }
-  .projects-grid .project {
-    position: relative;
-    margin: 15px;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  .projects-grid .project img {
-    width: 100%;
-    transition: all 300ms;
-  }
-  .projects-grid .project .backdrop {
-    cursor: pointer;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: #0000001a;
-    transition: all 300ms;
-    z-index: 1;
-  }
-  .projects-grid .project .backdrop .project-title {
-    background: #0000007e;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    font-size: 1rem;
-    color: #fff;
-    padding: 5px;
-    transition: all 300ms;
-    opacity: 0;
-  }
-  .projects-grid .project .backdrop:hover .project-title {
-    display: block;
-    opacity: 1;
-  }
-}
 
-.project-dialog-container {
-  background: #00000030;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 1070;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .project-dialog {
-    border-radius: 4px;
-    background: #FFF;
-    width: 70vw;
-    min-height: 500px;
-  }
-  .project-dialog .project-dialog-heading {
+  .project-dialog-container {
+    background: #00000030;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1070;
     display: flex;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    .project-dialog {
+      border-radius: 4px;
+      background: #FFF;
+      width: 70vw;
+      min-height: 500px;
+    }
+    .project-dialog .project-dialog-heading {
+      display: flex;
+      padding: 20px;
+    }
+    .project-dialog .project-dialog-title {
+      display: flex;
+      flex: 1;
+    }
+    .project-dialog .project-dialog-title h3 {
+      margin-bottom: 0px;
+    }
+    .project-dialog .project-dialog-heading .close-btn {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+    }
+    .project-dialog .project-dialog-image {
+      width: inherit;
+      height: inherit;
+    }
+    .project-dialog-content {
+      padding: 20px;
+    }
+    .project-dialog-content .visit-btn {
+      cursor: pointer;
+      background-color: #5a40ca;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+      min-width: 100px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .project-dialog-content .github-btn {
+      cursor: pointer;
+      background-color: #666;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+      min-width: 100px;
+      border-radius: 4px;
+    }
   }
-  .project-dialog .project-dialog-title {
-    display: flex;
-    flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    .project-dialog-container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      .project-dialog {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        min-height: 100vh;
+      }
+    }
   }
-  .project-dialog .project-dialog-title h3 {
-    margin-bottom: 0px;
-  }
-  .project-dialog .project-dialog-heading .close-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-  }
-  .project-dialog .project-dialog-image {
-    width: inherit;
-    height: inherit;
-  }
-  .project-dialog-content {
-    padding: 20px;
-  }
-  .project-dialog-content .visit-btn {
-    cursor: pointer;
-    background-color: #5a40ca;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    min-width: 100px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  .project-dialog-content .github-btn {
-    cursor: pointer;
-    background-color: #666;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    min-width: 100px;
-    border-radius: 4px;
-  }
-}

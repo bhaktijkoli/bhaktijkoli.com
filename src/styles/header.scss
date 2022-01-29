@@ -46,3 +46,11 @@
     transform: translate(25px, 105px) rotate( -7deg);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  #header {
+    .title {
+      text-align: center;
+    }
+  }
+}
