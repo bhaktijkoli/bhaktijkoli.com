@@ -5,6 +5,14 @@ section#hero {
     width: 100vw;
     height: 100vh;
   }
+  .mobile-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: #5a40ca;
+  }
   .overlay svg {
     position: relative;
     width: inherit;
@@ -20,6 +28,7 @@ section#hero {
   }
   .description {
     font-size: 1.2rem;
+    margin-bottom: 20px;
   }
   .btn-chat {
     position: relative;
@@ -66,25 +75,6 @@ section#hero {
     animation-iteration-count: infinite;
     animation-delay: 1s
   }
-
-  .or {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    width: 160px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-  }
-
-  .btn-scehudle {
-    background: none;
-    border: none;
-    color: #FFF;
-    font-size: 1rem;
-  }
-  .btn-scehudle:hover {
-    color: #FFF;
-  }
 }
 
 @keyframes move {
@@ -103,5 +93,14 @@ section#hero {
   }
   100% {
     left: 82%
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section#hero {
+    margin-bottom: 50px;
+    .container {
+      text-align: center;
+    }
   }
 }

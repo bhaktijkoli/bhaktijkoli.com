@@ -28,3 +28,17 @@
     opacity: 0.5;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  section#services {
+    .container {
+      padding: 0px 30px;
+    }
+    .service-title {
+      text-align: center;
+    }
+    .service-description {
+      text-align: center;
+    }
+  }
+}

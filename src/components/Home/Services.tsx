@@ -4,6 +4,7 @@ import InternetOfThings from "../Backgrounds/InternetOfThings";
 import Mobile from "../Backgrounds/Mobile";
 import Web from "../Backgrounds/Web";
 import Fade from "react-reveal/Fade";
+import useMobile from "hooks/useMobile";
 
 const ITEMS = [
   {
@@ -37,6 +38,7 @@ const ITEMS = [
 ];
 
 const Services: React.FC = () => {
+  const isMobile = useMobile();
   return (
     <section id="services">
       <div className="container">
@@ -49,19 +51,16 @@ const Services: React.FC = () => {
             </p>
           </div>
           {ITEMS.map((item, key) => {
+            const reverse = isMobile || item.reverse;
             return (
               <div className="row" key={key}>
                 <Fade>
-                  <div
-                    className={`col-sm-4 service order-${item.reverse ? 3 : 1}`}
-                  >
+                  <div className={`col-sm-4 service order-${reverse ? 3 : 1}`}>
                     {item.img}
                   </div>
                 </Fade>
                 <div className="col-sm-2 order-2"></div>
-                <div
-                  className={`col-sm-5 service order-${item.reverse ? 1 : 3}`}
-                >
+                <div className={`col-sm-5 service order-${reverse ? 1 : 3}`}>
                   <Fade>
                     <h2 className="service-title">{item.title}</h2>
                   </Fade>
