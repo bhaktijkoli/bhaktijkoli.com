@@ -2,6 +2,7 @@ import * as React from "react";
 import { Project } from "types";
 import { FiExternalLink, FiGithub, FiMinimize2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import useLockBodyScroll from "hooks/useLockBodyScroll";
 
 interface ProjectDialogProps {
   project: Project;
@@ -12,6 +13,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   project,
   onClose,
 }: ProjectDialogProps) => {
+  useLockBodyScroll();
   return (
     <AnimatePresence>
       <div className="project-dialog-container">
