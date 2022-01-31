@@ -14,8 +14,16 @@ const ITEMS = [
     link: "/projects",
   },
   {
-    label: "Schedule",
-    link: "/schedule",
+    label: "Experience",
+    link: "/experience",
+  },
+  {
+    label: "Blogs",
+    link: "/blogs",
+  },
+  {
+    label: "Meet",
+    link: "/meet",
   },
 ];
 
