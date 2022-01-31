@@ -15,15 +15,18 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/react-vertical-timeline-component": "^3.3.2",
     "axios": "^0.25.0",
     "clsx": "^1.1.1",
     "contentful": "^9.1.5",
     "framer-motion": "^6.2.1",
+    "moment": "^2.29.1",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "^1.2.2",
+    "react-vertical-timeline-component": "^3.5.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",

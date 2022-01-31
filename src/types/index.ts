@@ -27,3 +27,15 @@ export interface ProjectEntry {
   github: string;
   link: string;
 }
+
+export interface Experience {
+  title: string;
+  company: string;
+  website: string;
+  logoLink: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  internship: boolean;
+  location: string;
+}

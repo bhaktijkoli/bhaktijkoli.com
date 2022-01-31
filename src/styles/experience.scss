@@ -1,0 +1,32 @@
+section#experience {
+  margin-top: 100px;
+  .vertical-timeline-element-content {
+    box-shadow: none;
+  }
+  .timeline-element-icon {
+    background: #f0f0f0;
+    box-shadow: none;
+  }
+  .job-details {
+    display: flex;
+  }
+  .job-title {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+  .job-company-name {
+    font-size: 1rem;
+  }
+  .job-company-logo {
+    width: 64px;
+    height: 64px;
+    margin-right: 20px;
+  }
+  .job-description {
+    margin-bottom: 30px;
+  }
+  .job-other {
+    font-size: 0.9rem;
+    color: #303e49;
+  }
+}
