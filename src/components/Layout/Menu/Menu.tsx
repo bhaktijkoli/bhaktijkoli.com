@@ -22,6 +22,10 @@ const ITEMS = [
     link: "/blogs",
   },
   {
+    label: "Workshops",
+    link: "/workshops",
+  },
+  {
     label: "Meet",
     link: "/meet",
   },
