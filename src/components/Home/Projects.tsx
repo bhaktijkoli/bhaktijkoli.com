@@ -1,37 +1,12 @@
-import clsx from "clsx";
+import ProjectCard from "components/ProjectsGrid/ProjectCard";
+import ProjectDialog from "components/ProjectsGrid/ProjectDialog";
+import useClient from "hooks/useClient";
 import * as React from "react";
 import Fade from "react-reveal/Fade";
-import useClient from "hooks/useClient";
 import { Project, ProjectEntry } from "types";
-import ProjectDialog from "./ProjectDialog";
-import ProjectCard from "./ProjectCard";
 
-const FILTERS = [
-  {
-    label: "All",
-    tag: "all",
-  },
-  {
-    label: "Web",
-    tag: "web",
-  },
-  {
-    label: "Mobile",
-    tag: "mobile",
-  },
-  {
-    label: "IOT",
-    tag: "iot",
-  },
-  {
-    label: "Blockchain",
-    tag: "blockchain",
-  },
-];
-
-const ProjectsGrid: React.FC = () => {
+const Projects: React.FC = () => {
   const [projects, setProjects] = React.useState<Project[]>([]);
-  const [selectedFilter, setSelectedFilter] = React.useState("all");
   const [selectedProject, setSelectedProject] = React.useState<Project | null>(
     null
   );
@@ -58,31 +33,19 @@ const ProjectsGrid: React.FC = () => {
   }, []);
   return (
     <section id="projects">
-      <div className="container">
-        <div className="row filters">
-          {FILTERS.map((filter, key) => {
-            return (
-              <button
-                className={clsx({
-                  "filter-item": true,
-                  active: selectedFilter === filter.tag,
-                })}
-                onClick={() => setSelectedFilter(filter.tag)}
-                key={key}
-              >
-                {filter.label}
-              </button>
-            );
-          })}
-        </div>
-        <div className="row projects-grid">
-          {projects
-            .filter((project) =>
-              selectedFilter === "all"
-                ? true
-                : project.categories.includes(selectedFilter)
-            )
-            .map((project, key) => {
+      <div className="overlay">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12">
+              <h1 className="title">My Projects</h1>
+              <p className="subtitle">
+                I have built a number of projects over the years, few were
+                developed as a freelancer and others as open source.
+              </p>
+            </div>
+          </div>
+          <div className="row projects-grid">
+            {projects.slice(0, 6).map((project, key) => {
               return (
                 <div className="col-sm-4" key={project.id}>
                   <Fade left distance="10%" duration={500} delay={50 * key}>
@@ -94,6 +57,7 @@ const ProjectsGrid: React.FC = () => {
                 </div>
               );
             })}
+          </div>
         </div>
       </div>
       {selectedProject && (
@@ -106,4 +70,4 @@ const ProjectsGrid: React.FC = () => {
   );
 };
 
-export default ProjectsGrid;
+export default Projects;

@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { Hero, Services } from "../components/Home";
+import { Hero, Services, Projects } from "../components/Home";
 import Layout from "../components/Layout/Layout/Layout";
 
 const Home: NextPage = () => {
@@ -9,6 +9,7 @@ const Home: NextPage = () => {
       <React.Fragment>
         <Hero />
         <Services />
+        <Projects />
       </React.Fragment>
     </Layout>
   );
