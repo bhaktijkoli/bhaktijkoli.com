@@ -15,18 +15,21 @@ const Projects: React.FC = () => {
     client
       .getEntries<ProjectEntry>({ content_type: "projects" })
       .then((res) => {
-        const projects: Project[] = res.items.map((entity) => {
-          return {
-            id: entity.sys.id,
-            name: entity.fields.name,
-            categories: entity.fields.categories,
-            slug: entity.fields.slug,
-            description: entity.fields.description,
-            link: entity.fields.link,
-            github: entity.fields.github,
-            image: entity.fields.image?.fields.file.url,
-          };
-        });
+        const projects: Project[] = res.items
+          .filter((entity) => entity.fields.featured === true)
+          .map((entity) => {
+            return {
+              id: entity.sys.id,
+              name: entity.fields.name,
+              categories: entity.fields.categories,
+              slug: entity.fields.slug,
+              description: entity.fields.description,
+              link: entity.fields.link,
+              github: entity.fields.github,
+              image: entity.fields.image?.fields.file.url,
+              featured: entity.fields.featured,
+            };
+          });
         setProjects(projects);
       });
     // eslint-disable-next-line

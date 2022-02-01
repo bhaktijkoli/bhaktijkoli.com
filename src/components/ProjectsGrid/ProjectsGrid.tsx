@@ -37,21 +37,37 @@ const ProjectsGrid: React.FC = () => {
   );
   const client = useClient();
   React.useEffect(() => {
+    const getPriorityValue = (priority: string) => {
+      if (priority === "High") {
+        return 3;
+      } else if (priority === "Medium") {
+        return 2;
+      } else {
+        return 1;
+      }
+    };
     client
       .getEntries<ProjectEntry>({ content_type: "projects" })
       .then((res) => {
-        const projects: Project[] = res.items.map((entity) => {
-          return {
-            id: entity.sys.id,
-            name: entity.fields.name,
-            categories: entity.fields.categories,
-            slug: entity.fields.slug,
-            description: entity.fields.description,
-            link: entity.fields.link,
-            github: entity.fields.github,
-            image: entity.fields.image?.fields.file.url,
-          };
-        });
+        const projects: Project[] = res.items
+          .sort(
+            (a, b) =>
+              getPriorityValue(b.fields.priority) -
+              getPriorityValue(a.fields.priority)
+          )
+          .map((entity) => {
+            return {
+              id: entity.sys.id,
+              name: entity.fields.name,
+              categories: entity.fields.categories,
+              slug: entity.fields.slug,
+              description: entity.fields.description,
+              link: entity.fields.link,
+              github: entity.fields.github,
+              image: entity.fields.image?.fields.file.url,
+            };
+          });
+        console.log("projects", projects);
         setProjects(projects);
       });
     // eslint-disable-next-line

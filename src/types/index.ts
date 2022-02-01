@@ -8,6 +8,8 @@ export interface Project {
   github?: string;
   link?: string;
   image?: string;
+  featured?: boolean;
+  priority?: "High" | "Medium" | "Low";
 }
 
 export interface ImageEntry {
@@ -26,6 +28,8 @@ export interface ProjectEntry {
   image: Entry<ImageEntry>;
   github: string;
   link: string;
+  featured: boolean;
+  priority: "High" | "Medium" | "Low";
 }
 
 export interface Experience {
