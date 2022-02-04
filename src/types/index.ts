@@ -43,3 +43,16 @@ export interface Experience {
   internship: boolean;
   location: string;
 }
+
+export interface Blog {
+  title: string;
+  pubDate: string;
+  link: string;
+  guid: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  content: string;
+  enclosure: any;
+  categories: string[];
+}

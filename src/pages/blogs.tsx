@@ -2,15 +2,14 @@ import React from "react";
 import Header from "../components/Common/Header/Header";
 import Layout from "../components/Layout/Layout/Layout";
 import type { NextPage } from "next";
+import BlogList from "components/BlogList/BlogList";
 
 const Blogs: NextPage = () => {
   return (
     <Layout>
       <React.Fragment>
         <Header title="Blogs" />
-        <div className="container" style={{ marginTop: 100 }}>
-          <h1>Comming Soon</h1>
-        </div>
+        <BlogList />
       </React.Fragment>
     </Layout>
   );

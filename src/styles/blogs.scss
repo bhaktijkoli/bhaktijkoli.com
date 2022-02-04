@@ -1,0 +1,42 @@
+section#blogList {
+  .blog {
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    border-radius: 0.25em;
+    padding: 1em;
+  }
+  .blog .blog-thumbnail {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 0.25rem;
+  }
+  .blog .blog-details {
+    display: flex;
+  }
+  .blog .blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+  .blog .blog-description {
+    text-overflow:ellipsis;
+    overflow:hidden;
+    // Addition lines for 2 line or multiline ellipsis
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+  .blog-tags {
+    margin-top: 15px;
+    display: flex;
+  }
+  .blog-tags .tag {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background: #eee;
+    border-radius: 0.25rem;
+    margin-right: 10px;
+  }
+}
