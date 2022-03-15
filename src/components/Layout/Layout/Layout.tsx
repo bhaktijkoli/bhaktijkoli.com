@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
+import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
 
 interface LayoutProps {
@@ -50,6 +51,7 @@ const Layout: React.FC<LayoutProps> = ({ title, children }: LayoutProps) => {
       </Head>
       <Menu />
       {children}
+      <Footer />
       <Script src="https://client.crisp.chat/l.js" />
     </React.Fragment>
   );
