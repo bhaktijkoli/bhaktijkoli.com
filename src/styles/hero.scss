@@ -30,51 +30,52 @@ section#hero {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
-  .btn-chat {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    outline: none;
-    cursor: pointer;
-    background-image: none;
-    white-space: nowrap;
-    min-width: 160px;
-    padding: 6px 16px;
-    font-size: 1em;
-    font-style: initial;
-    line-height: 1.846;
-    border-radius: 4px;
-    user-select: none;
-    transition: all 0.4s;
-    text-decoration: none;
-    text-transform: uppercase;
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-    background-color: transparent
-  }
+}
 
-  .btn-chat:hover {
-    color: #000000;
-    background-color: #FFFFFF
-  }
-  .btn-chat i {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=1);
-    width: 15%;
-    height: 100%;
-    transform: skew(-10deg, 0deg);
-    animation: move 2s;
-    animation-iteration-count: infinite;
-    animation-delay: 1s
-  }
+.btn-chat {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  outline: none;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  min-width: 160px;
+  padding: 6px 16px;
+  font-size: 1em;
+  font-style: initial;
+  line-height: 1.846;
+  border-radius: 4px;
+  user-select: none;
+  transition: all 0.4s;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  background-color: transparent
+}
+
+.btn-chat:hover {
+  color: #000000;
+  background-color: #FFFFFF
+}
+.btn-chat i {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=1);
+  width: 15%;
+  height: 100%;
+  transform: skew(-10deg, 0deg);
+  animation: move 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s
 }
 
 @keyframes move {

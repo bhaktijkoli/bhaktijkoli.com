@@ -1,11 +1,13 @@
 import ProjectCard from "components/ProjectsGrid/ProjectCard";
 import ProjectDialog from "components/ProjectsGrid/ProjectDialog";
 import useClient from "hooks/useClient";
+import { useRouter } from "next/router";
 import * as React from "react";
 import Fade from "react-reveal/Fade";
 import { Project, ProjectEntry } from "types";
 
 const Projects: React.FC = () => {
+  const router = useRouter();
   const [projects, setProjects] = React.useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = React.useState<Project | null>(
     null
@@ -60,6 +62,18 @@ const Projects: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+          <div className="row">
+            <div className="col-sm-12">
+              <div className="btn-container">
+                <button
+                  className="btn-chat"
+                  onClick={() => router.push("/projects")}
+                >
+                  View More<i></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
