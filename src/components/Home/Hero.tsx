@@ -25,7 +25,12 @@ const Hero: React.FC = () => {
           excellence in the software industry.
         </p>
       </Fade>
-      <button className="btn-chat" onClick={() => router.push("/schedule")}>
+      <button
+        className="btn-chat"
+        onClick={() => {
+          window.location.href = "/meet";
+        }}
+      >
         Connect<i></i>
       </button>
     </React.Fragment>

@@ -15,6 +15,7 @@ const schedule: NextPage = () => {
           style={{
             minWidth: 320,
             height: 630,
+            marginTop: -60,
           }}
         ></div>
         <Script src="https://assets.calendly.com/assets/external/widget.js" />

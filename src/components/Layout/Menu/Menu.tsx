@@ -62,7 +62,13 @@ const Menu: React.FC = () => {
               return (
                 <li
                   className="menu-item"
-                  onClick={() => router.push(item.link)}
+                  onClick={() => {
+                    if (item.link === "/meet") {
+                      window.location.href = "/meet";
+                    } else {
+                      router.push(item.link);
+                    }
+                  }}
                   key={key}
                 >
                   <Fade
