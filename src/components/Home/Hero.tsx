@@ -3,6 +3,12 @@ import HeroBackground from "../Backgrounds/Hero";
 import Fade from "react-reveal/Fade";
 import { useRouter } from "next/router";
 import useMobile from "hooks/useMobile";
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoWhatsapp,
+  IoMail,
+} from "react-icons/io5";
 
 const Hero: React.FC = () => {
   const [animate, setAnimate] = React.useState(false);
@@ -25,14 +31,41 @@ const Hero: React.FC = () => {
           excellence in the software industry.
         </p>
       </Fade>
-      <button
-        className="btn-chat"
-        onClick={() => {
-          window.location.href = "/meet";
-        }}
-      >
-        Connect<i></i>
-      </button>
+      <Fade bottom when={animate} delay={900} distance="10%">
+        <button
+          className="btn-chat"
+          onClick={() => {
+            window.location.href = "/meet";
+          }}
+        >
+          Connect<i></i>
+        </button>
+      </Fade>
+      <div className="social-icons-container">
+        <Fade left when={animate} delay={2000} distance="30%">
+          <a className="social-icon" href="mailto:hello@bhaktijkoli.com">
+            <IoMail />
+          </a>
+        </Fade>
+        <Fade left when={animate} delay={2100} distance="30%">
+          <a className="social-icon" href="https://wa.me/917710848662">
+            <IoLogoWhatsapp />
+          </a>
+        </Fade>
+        <Fade left when={animate} delay={2200} distance="30%">
+          <a
+            className="social-icon"
+            href="https://www.linkedin.com/in/bhaktij-koli"
+          >
+            <IoLogoLinkedin />
+          </a>
+        </Fade>
+        <Fade left when={animate} delay={2300} distance="30%">
+          <a className="social-icon" href="https://github.com/bhaktijkoli">
+            <IoLogoGithub />
+          </a>
+        </Fade>
+      </div>
     </React.Fragment>
   );
 

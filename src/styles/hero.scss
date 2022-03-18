@@ -78,6 +78,15 @@ section#hero {
   animation-delay: 1s
 }
 
+.social-icons-container {
+  margin-top: 10px;
+  .social-icon {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+}
+
 @keyframes move {
   0% {
     left: 0;
