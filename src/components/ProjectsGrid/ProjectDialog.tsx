@@ -3,6 +3,7 @@ import { Project } from "types";
 import { FiExternalLink, FiGithub, FiMinimize2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import useLockBodyScroll from "hooks/useLockBodyScroll";
+import ReactGA from "react-ga";
 
 interface ProjectDialogProps {
   project: Project;
@@ -14,6 +15,13 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   onClose,
 }: ProjectDialogProps) => {
   useLockBodyScroll();
+  React.useEffect(() => {
+    ReactGA.event({
+      category: "Project",
+      action: "View",
+      label: project.name,
+    });
+  }, [project]);
   return (
     <AnimatePresence>
       <div className="project-dialog-container">
