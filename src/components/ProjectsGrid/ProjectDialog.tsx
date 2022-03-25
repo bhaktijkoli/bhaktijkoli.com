@@ -52,7 +52,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
                 {project.github && (
                   <button
                     className="github-btn"
-                    onClick={() => window.open(project.link)}
+                    onClick={() => window.open(project.github)}
                   >
                     Github <FiGithub />
                   </button>
