@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       ReactGA.pageview(window.location.pathname + window.location.search);
     });
     ReactGA.pageview(window.location.pathname + window.location.search);
+    // eslint-disable-next-line
   }, []);
   return <Component {...pageProps} />;
 }
