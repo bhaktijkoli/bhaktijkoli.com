@@ -14,26 +14,39 @@ const Projects: React.FC = () => {
   );
   const client = useClient();
   React.useEffect(() => {
-    client
-      .getEntries<ProjectEntry>({ content_type: "projects" })
-      .then((res) => {
-        const projects: Project[] = res.items
-          .filter((entity) => entity.fields.featured === true)
-          .map((entity) => {
-            return {
-              id: entity.sys.id,
-              name: entity.fields.name,
-              categories: entity.fields.categories,
-              slug: entity.fields.slug,
-              description: entity.fields.description,
-              link: entity.fields.link,
-              github: entity.fields.github,
-              image: entity.fields.image?.fields.file.url,
-              featured: entity.fields.featured,
-            };
-          });
-        setProjects(projects);
-      });
+    try {
+      client
+        .getEntries<ProjectEntry>({ content_type: "projects" })
+        .then((res) => {
+          const projects: Project[] = res.items
+            .filter((entity) => entity.fields.featured === true)
+            .map((entity) => {
+              return {
+                id: entity.sys.id,
+                name: entity.fields.name,
+                categories: entity.fields.categories,
+                slug: entity.fields.slug,
+                description: entity.fields.description,
+                link: entity.fields.link,
+                github: entity.fields.github,
+                image: entity.fields.image?.fields.file.url,
+                featured: entity.fields.featured,
+              };
+            });
+          localStorage.setItem(
+            "projects",
+            JSON.stringify({ v: "1", projects })
+          );
+          setProjects(projects);
+        });
+    } catch (error) {
+      try {
+        const data = JSON.parse(localStorage.getItem("projects") as string);
+        if (data["v"] === "1") {
+          setProjects(data.projects);
+        }
+      } catch (error) {}
+    }
     // eslint-disable-next-line
   }, []);
   return (
