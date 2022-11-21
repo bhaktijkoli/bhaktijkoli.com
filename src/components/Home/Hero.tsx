@@ -7,6 +7,7 @@ import {
   IoLogoGithub,
   IoLogoLinkedin,
   IoLogoWhatsapp,
+  IoLogoInstagram,
   IoMail,
 } from "react-icons/io5";
 
@@ -47,11 +48,6 @@ const Hero: React.FC = () => {
             <IoMail />
           </a>
         </Fade>
-        <Fade left when={animate} delay={2100} distance="30%">
-          <a className="social-icon" href="https://wa.me/917710848662">
-            <IoLogoWhatsapp />
-          </a>
-        </Fade>
         <Fade left when={animate} delay={2200} distance="30%">
           <a
             className="social-icon"
@@ -63,6 +59,19 @@ const Hero: React.FC = () => {
         <Fade left when={animate} delay={2300} distance="30%">
           <a className="social-icon" href="https://github.com/bhaktijkoli">
             <IoLogoGithub />
+          </a>
+        </Fade>
+        <Fade left when={animate} delay={2100} distance="30%">
+          <a
+            className="social-icon"
+            href="https://www.instagram.com/bhaktijkoli/?hl=en"
+          >
+            <IoLogoInstagram />
+          </a>
+        </Fade>
+        <Fade left when={animate} delay={2100} distance="30%">
+          <a className="social-icon" href="https://wa.me/917710848662">
+            <IoLogoWhatsapp />
           </a>
         </Fade>
       </div>
